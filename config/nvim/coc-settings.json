@@ -1,0 +1,5 @@
+{
+  "coc.source.around.enable": false,
+  "coc.source.buffer.enable": false,
+  "coc.preferences.extensionUpdateCheck": false
+}

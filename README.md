@@ -1,2 +1,2 @@
-# bspwm-dotfiles
-My Gruvbox BSPWM Configuration files
+# BSPWM Gruvbox Setup
+My configuration files of my main desktop.

@@ -1,0 +1,120 @@
+;                  __      __              
+;     ____  ____  / /_  __/ /_  ____ ______
+;    / __ \/ __ \/ / / / / __ \/ __ `/ ___/
+;   / /_/ / /_/ / / /_/ / /_/ / /_/ / /    
+;  / .___/\____/_/\__, /_.___/\__,_/_/     
+; /_/            /____/                    
+; Dotfiles - Hayafumi
+
+[colors]
+
+foreground = #5B514B
+background = #242424
+white = #E8D5AC
+yellow = #D18D2D
+lightbrown = #353130
+
+;     __                   
+;    / /_  ____ ___________
+;   / __ \/ __ `/ ___/ ___/
+;  / /_/ / /_/ / /  (__  ) 
+; /_.___/\__,_/_/  /____/  
+			 
+[bar/bar]
+enable-ipc=true
+height = 20
+width = 98.8%
+offset-x = 0.6%
+offset-y = 8
+radius = 0
+border-size = 2
+border-color = ${colors.foreground}
+padding-left = 0
+padding-right = 0
+
+background = ${colors.background}
+foreground = ${colors.foreground}
+
+line-size = 1
+
+font-0=SF Pro Display:size=9:weight=bold;2
+
+modules-left = bspwm 
+modules-center = xwindow
+modules-right = time
+
+scroll-up = bspwn-wsnext
+scroll-down = bspwn-wsprev
+
+wm-restack = bspwm
+override-redirect = false
+
+;                         __      __         
+;    ____ ___  ____  ____/ /_  __/ /__  _____
+;   / __ `__ \/ __ \/ __  / / / / / _ \/ ___/
+;  / / / / / / /_/ / /_/ / /_/ / /  __(__  ) 
+; /_/ /_/ /_/\____/\__,_/\__,_/_/\___/____/  
+                                           
+[module/xwindow]
+type = internal/xwindow
+label = %title:0:40:...%
+label-color1 = ${colors.foreground}
+label-foreground = ${colors.white} 
+label-background = ${colors.background} 
+label-padding = 2
+
+[module/bspwm]
+type = internal/bspwm
+format = <label-state> <label-mode>
+index-sort = true
+inline-mode = false
+
+enable-click = true
+reverse-scroll = false
+
+label-separator = " "
+
+label-focused = %index%
+label-focused-underline = ${colors.foreground}
+label-focused-padding = 4
+label-focused-background = ${colors.yellow}
+label-focused-foreground = ${colors.background}
+
+label-occupied = %index%
+label-occupied-padding = 4
+label-occupied-background = ${colors.lightbrown}
+label-occupied-foreground = ${colors.white}
+
+label-empty = %index%
+label-empty-padding = 4
+label-empty-background = ${colors.lightbrown}
+label-empty-foreground = ${colors.white}
+
+label-urgent = 
+label-urgent-padding = 4
+label-urgent-foreground = ${colors.background}
+label-urgent-background = ${colors.foreground}
+label-urgent-overline = ${colors.background}
+label-urgent-font = 2
+
+[module/time]
+type = internal/date
+interval = 10
+format-margin = 0
+
+time = "%H:%M"
+date = "%d %b"
+
+label = %time%
+label-foreground = ${colors.white}
+label-background = ${colors.lightbrown}
+label-padding = 4
+
+[settings]
+screenchange-reload = true
+
+[global/wm]
+margin-top = 0
+margin-bottom = 0
+
+; vim:ft=dosini

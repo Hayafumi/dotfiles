@@ -2,5 +2,5 @@
 My configuration files of my main desktop.
 
 #### 📷 Screenshots
-![screenshot](screenshot.png)
-![neofetch](neofetch.png)
+![screenshot](/screenshots/screenshot.png)
+![neofetch](/screenshots/neofetch.png)

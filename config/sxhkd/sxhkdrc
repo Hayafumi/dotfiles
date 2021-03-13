@@ -18,6 +18,17 @@ super + @space
 super + Escape
 	pkill -USR1 -x sxhkd
 
+# Flameshot
+super + shift + z
+  flameshot gui
+
+# Volume
+XF86Audio{Raise,Lower}Volume
+  pactl set-sink-volume @DEFAULT_SINK@ {+,-}10%
+
+XF86AudioMute
+  pactl set-sink-mute @DEFAULT_SINK@ toggle
+
 #
 # bspwm hotkeys
 #

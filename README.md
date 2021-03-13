@@ -1,6 +1,6 @@
-# ☕BSPWM Gruvbox Setup
+# ☕ BSPWM Gruvbox Setup
 My configuration files of my main desktop.
 
-#### 📷Screenshots
+#### 📷 Screenshots
 ![screenshot](screenshot.png)
 ![neofetch](neofetch.png)

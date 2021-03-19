@@ -1,9 +1,9 @@
-;                  __      __              
+;                  __      __
 ;     ____  ____  / /_  __/ /_  ____ ______
 ;    / __ \/ __ \/ / / / / __ \/ __ `/ ___/
-;   / /_/ / /_/ / / /_/ / /_/ / /_/ / /    
-;  / .___/\____/_/\__, /_.___/\__,_/_/     
-; /_/            /____/                    
+;   / /_/ / /_/ / / /_/ / /_/ / /_/ / /
+;  / .___/\____/_/\__, /_.___/\__,_/_/
+; /_/            /____/
 ; Dotfiles - Hayafumi
 
 [colors]
@@ -14,12 +14,12 @@ white = #E8D5AC
 yellow = #D18D2D
 lightbrown = #353130
 
-;     __                   
+;     __
 ;    / /_  ____ ___________
 ;   / __ \/ __ `/ ___/ ___/
-;  / /_/ / /_/ / /  (__  ) 
-; /_.___/\__,_/_/  /____/  
-			 
+;  / /_/ / /_/ / /  (__  )
+; /_.___/\__,_/_/  /____/
+
 [bar/bar]
 enable-ipc=true
 height = 20
@@ -27,6 +27,7 @@ width = 98.8%
 offset-x = 0.6%
 offset-y = 8
 radius = 0
+monitor = HDMI2
 border-size = 2
 border-color = ${colors.foreground}
 padding-left = 0
@@ -39,7 +40,7 @@ line-size = 1
 
 font-0=SF Pro Display:size=9:weight=bold;2
 
-modules-left = bspwm 
+modules-left = bspwm
 modules-center = xwindow
 modules-right = time
 
@@ -49,19 +50,54 @@ scroll-down = bspwn-wsprev
 wm-restack = bspwm
 override-redirect = false
 
-;                         __      __         
+[bar/float]
+enable-ipc=true
+height = 20
+width = 8.1%
+offset-x = 0.6%
+offset-y = 8
+radius = 0
+border-size = 2
+border-color = ${colors.foreground}
+monitor = VGA1
+padding-left = 0
+padding-right = 0
+
+font-0=SF Pro Display:size=9:weight=bold;2
+
+background = ${colors.background}
+foreground = ${colors.foreground}
+
+line-size = 1
+
+modules-left = bspwm
+
+scroll-up = bspwm-wsnext
+scroll-down = bspwm-wsprev
+
+wm-restack = bspwm
+override-redirect = false
+
+;                         __      __
 ;    ____ ___  ____  ____/ /_  __/ /__  _____
 ;   / __ `__ \/ __ \/ __  / / / / / _ \/ ___/
-;  / / / / / / /_/ / /_/ / /_/ / /  __(__  ) 
-; /_/ /_/ /_/\____/\__,_/\__,_/_/\___/____/  
-                                           
+;  / / / / / / /_/ / /_/ / /_/ / /  __(__  )
+; /_/ /_/ /_/\____/\__,_/\__,_/_/\___/____/
+
 [module/xwindow]
 type = internal/xwindow
 label = %title:0:40:...%
 label-color1 = ${colors.foreground}
-label-foreground = ${colors.white} 
-label-background = ${colors.background} 
+label-foreground = ${colors.white}
+label-background = ${colors.background}
 label-padding = 2
+
+[module/sep]
+type = custom/text
+content =  
+content-background = ${colors.background}
+content-foreground = ${colors.background}
+padding = 2
 
 [module/bspwm]
 type = internal/bspwm
@@ -109,6 +145,31 @@ label = %time%
 label-foreground = ${colors.white}
 label-background = ${colors.lightbrown}
 label-padding = 4
+
+[module/network]
+type = internal/network
+interface = wlan0
+
+interval = 1.0
+accumulate-stats = true
+unknown-as-up = true
+
+format-connected = <ramp-signal>  <label-connected>
+format-disconnected = <label-disconnected>
+
+label-connected = %essid%
+label-disconnected = No Connection
+label-disconnected-foreground = ${colors.white}
+label-connected-foreground = ${colors.white}
+
+ramp-signal-0 = 
+ramp-signal-foreground = ${colors.yellow}
+ramp-signal-background = ${colors.background}
+ramp-signal-padding = 2
+
+[module/wireless-network]
+type = internal/network
+interface = wlan0
 
 [settings]
 screenchange-reload = true

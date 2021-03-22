@@ -1,3 +1,39 @@
+#          __                _ __  __       
+#   ____ _/ /___ ___________(_) /_/ /___  __
+#  / __ `/ / __ `/ ___/ ___/ / __/ __/ / / /
+# / /_/ / / /_/ / /__/ /  / / /_/ /_/ /_/ / 
+# \__,_/_/\__,_/\___/_/  /_/\__/\__/\__, /  
+#                                  /____/   
+# Dotfiles - Hayafumi
+
+# Terminal Settings
+window:
+    padding:
+       x: 20
+       y: 20
+
+# Font Configuration
+font:
+  normal:
+    family: JetBrainsMono Nerd Font
+    style: Bold
+  bold:
+    family: JetBrainsMono Nerd Font
+    style: Extra Bold
+  italic:
+    family: JetBrainsMono Nerd Font
+    style: Italic
+  bold_italic:
+    family: JetBrainsMono Nerd Font
+    style: Extra Bold
+  size: 9.0
+  offset:
+    y: 0
+    x: 0
+  glyph_offset:
+    y: 0
+
+# Colors
 colors:
   primary:
     background: "#282828"
@@ -27,26 +63,8 @@ colors:
     cyan: "#8ec07c"
     white: "#ebdbb2"
 
-window:
-    padding:
-       x: 20
-       y: 20
-
-font:
-  normal:
-    family: JetBrainsMono Nerd Font
-    style: Bold
-  bold:
-    family: JetBrainsMono Nerd Font
-    style: Extra Bold
-  italic:
-    family: JetBrainsMono Nerd Font
-    style: Italic
-  bold_italic:
-    family: JetBrainsMono Nerd Font
-    style: Extra Bold
-  size: 9
-  offset:
-    y: 0
-  glyph_offset:
-    y: 0
+  # Spread additional padding evenly around the terminal content.
+  dynamic_padding: true
+  
+  # Allow terminal applications to change Alacritty's window title.
+  dynamic_title: true

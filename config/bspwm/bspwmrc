@@ -10,6 +10,9 @@
 # Launch Hotkeys
 pgrep -x sxhkd > /dev/null || sxhkd &
 
+# Window Swallowing
+pgrep bspswallow || bspswallow &
+
 # Workspaces
 bspc monitor HDMI2 -d 1 2 3 4 5
 bspc monitor VGA1 -d 1 2 3 4 5
@@ -33,5 +36,5 @@ xsetroot -cursor_name left_ptr &
 # Autostart
 picom & # Launch Compositor
 dunst & # Notifications
-nitrogen --restore & # Set Wallpaper
+nitrogen --force-setter=xinerama --restore & # Set Wallpaper
 ~/.config/polybar/launch.sh # Status Bar

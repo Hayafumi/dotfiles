@@ -45,6 +45,9 @@ done << EOF
 	ls=exa -lh --icons --git
 	tree=exa --tree
   dir=exa --icons
+  commit=git commit
+  push=git push
+  c=clear
 EOF
 alias "${aliasargs[@]}"
 unset aliasargs

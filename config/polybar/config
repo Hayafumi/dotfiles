@@ -78,6 +78,63 @@ scroll-down = bspwm-wsprev
 wm-restack = bspwm
 override-redirect = false
 
+[bar/float2]
+enable-ipc=true
+height = 20
+width = 5.7%
+offset-x = 93.7%
+offset-y = 8
+radius = 0
+border-size = 2
+border-color = ${colors.foreground}
+monitor = VGA1
+padding-left = 0
+padding-right = 0
+
+font-0=SF Pro Display:size=9:weight=bold;2
+
+background = ${colors.background}
+foreground = ${colors.foreground}
+
+line-size = 1
+
+modules-right = date
+
+scroll-up = bspwm-wsnext
+scroll-down = bspwm-wsprev
+
+wm-restack = bspwm
+override-redirect = false
+
+[bar/another_bar_lol]
+enable-ipc=true
+height = 20
+width = 3%
+offset-x = 90.2%
+offset-y = 8
+radius = 0
+border-size = 2
+border-color = ${colors.foreground}
+monitor = VGA1
+padding-left = 0
+padding-right = 0
+
+font-0=SF Pro Display:size=9:weight=bold;2
+font-1=JetBrainsMono Nerd Font:size=12;2
+
+background = ${colors.background}
+foreground = ${colors.foreground}
+
+line-size = 1
+
+modules-center = alsa
+
+scroll-up = bspwm-wsnext
+scroll-down = bspwm-wsprev
+
+wm-restack = bspwm
+override-redirect = false
+
 ;                         __      __
 ;    ____ ___  ____  ____/ /_  __/ /__  _____
 ;   / __ `__ \/ __ \/ __  / / / / / _ \/ ___/
@@ -146,30 +203,30 @@ label-foreground = ${colors.white}
 label-background = ${colors.lightbrown}
 label-padding = 4
 
-[module/network]
-type = internal/network
-interface = wlan0
+[module/date]
+type = internal/date
+interval = 10
+format-margin = 0
 
-interval = 1.0
-accumulate-stats = true
-unknown-as-up = true
+time = "%b %d, %Y"
 
-format-connected = <ramp-signal>  <label-connected>
-format-disconnected = <label-disconnected>
+label = %time%
+label-foreground = ${colors.white}
+label-background = ${colors.lightbrown}
+label-padding = 4
 
-label-connected = %essid%
-label-disconnected = No Connection
-label-disconnected-foreground = ${colors.white}
-label-connected-foreground = ${colors.white}
+[module/alsa]
+type = internal/alsa
+interval = 5
 
-ramp-signal-0 = 
-ramp-signal-foreground = ${colors.yellow}
-ramp-signal-background = ${colors.background}
-ramp-signal-padding = 2
+label-muted = ""
+label-volume-foreground = ${colors.white}
+label-muted-foreground = ${colors.white}
 
-[module/wireless-network]
-type = internal/network
-interface = wlan0
+master-soundcard = default
+speaker-soundcard = default
+headphone-soundcard = default
+master-mixer = Master
 
 [settings]
 screenchange-reload = true

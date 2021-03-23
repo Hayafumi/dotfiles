@@ -6,14 +6,16 @@
 # Dotfiles - Hayafumi
 
 # Start X.org on login
-[[ -t 0 && $(tty) == /dev/tty1 && ! $DISPLAY ]] && ! [[ $USER == "root" ]] && startx && exit;clear
+[[ -t 0 && $(tty) == /dev/tty1 && ! $DISPLAY ]] && ! [[ $USER == "root" ]] && startx;clear
 
 # No typing "sudo"
 while read -r i; do
-	sudoargs+=("$i=sudo $i")
+  sudoargs+=("$i=sudo $i")
 done << EOF
-	pacman
+	emerge
 	rmmod
+  poweroff
+  reboot
 EOF
 alias "${sudoargs[@]}"
 unset sudoargs
@@ -40,9 +42,9 @@ while read -r i; do
 	aliasargs+=("$i")
 done << EOF
 	x=exit
-	ls=exa -lh --git
-	dir=exa -lh --git
+	ls=exa -lh --icons --git
 	tree=exa --tree
+  dir=exa --icons
 EOF
 alias "${aliasargs[@]}"
 unset aliasargs

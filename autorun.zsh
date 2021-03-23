@@ -44,10 +44,11 @@ done << EOF
 	x=exit
 	ls=exa -lh --icons --git
 	tree=exa --tree
-  dir=exa --icons
-  commit=git commit
-  push=git push
-  c=clear
+        dir=exa --icons
+        commit=git commit
+        push=git push
+        c=clear
+        add=git add
 EOF
 alias "${aliasargs[@]}"
 unset aliasargs
